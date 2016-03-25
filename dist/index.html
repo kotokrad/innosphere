@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/screen.min.css">
+  <title>Innosphere</title>
+</head>
+<body>
+<div class="container bg-banner">
+  <header class="main-header">
+    <dl class="header-contact contact-visit">
+      <dt>Visit our office</dt>
+      <dd>2945 Rinehart Road, Sunrise</dd>
+    </dl>
+    <dl class="header-contact contact-phone">
+      <dt>Contact us via phone</dt>
+      <dd>+44 20 7946 0041 3685</dd>
+    </dl>
+    <dl class="header-contact contact-email">
+      <dt>Ask us questions</dt>
+      <dd>info@innosphere.com</dd>
+    </dl>
+  </header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">Homepage</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a class="current" href="#">Recent  Images</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#">Sponsors</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="#"><i class="nav-icon-fb">Facebook</i></a>
+      <a href="#"><i class="nav-icon-in">LinkedIn</i></a>
+      <a href="#"><i class="nav-icon-bh">Behance</i></a>
+    </div>
+  </nav>
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Your beautiful handcrafted stock photography marketplace.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis tortor non ipsum condimentum molestie...</p>
+    </div>
+    <a href="#" class="banner-button btn">KNOW MORE</a>
+  </section>
+</div>
+<div class="container">
+  <section class="search">
+    <button class="search-button"><i></i>SEARCH ALL GALLERIES</button>
+    <form class="visible" action="/search" method="GET">
+      <div class="form-group">
+        <label for="s-cat">Categories</label>
+        <div class="select-wrap">
+          <select name="cat" id="s-cat">
+            <option value="architecture">
+            Architecture qqqqqqqqzzzzzzq</option>
+            <option value="architecture">
+            Architecture</option>
+            <option value="architecture">
+            Architecture</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="s-license">License Type</label>
+        <div class="select-wrap">
+          <select name="license" id="s-license">
+            <option value="creative">Creative</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="s-size">Image Size</label>
+        <div class="select-wrap">
+          <select name="size" id="s-size">
+            <option value="xxxl">XXXL</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group group-color">
+        <label>Color</label>
+        <div class="color-picker">
+          <label for="s-color-input">HEX</label>
+          <input type="text" name="color" id="s-color-input" placeholder="#F6546A" maxlength="7">
+          <input type="color" name="color" id="s-color-picker" value="#F6546A">
+          <!-- <button id="s-color-apply">APPLY</button> -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="s-browse">Browse</label>
+        <div class="select-wrap">
+          <select name="browse" id="s-browse">
+            <option value="most-viewed">Most Viewed</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="s-location">Location</label>
+        <div class="select-wrap">
+          <select name="location" id="s-location">
+            <option value="creative">Worldwide</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group group-radio">
+        <label>Adult Content</label>
+        <input type="radio" name="s-adult" id="s-adult-yes" value="yes" checked><!-- 
+         --><label class="radio-label" for="s-adult-yes">YES</label><!-- 
+         --><input type="radio" name="s-adult" id="s-adult-no" value="no"><!-- 
+         --><label class="radio-label" for="s-adult-no">NO</label>
+        </div>
+      <div class="form-group group-submit">
+        <button type="submit" class="submit btn">START YOUR SEARCH</button>
+      </div>
+    </form>
+  </section>
+</div>
+<div class="container">
+  <section class="page-description">
+    <h3>Over 40 Million Stock Photos, Vectors, Videos, and Music Tracks</h3>
+    <p>Search for images anywhere using our award-winning iPad&reg;, iPhone&reg;, and Android&reg; apps. Functional enough to use alone, beautiful enough to show off to clients.</p>
+  </section>
+</div>
+<div class="container">
+  <h2>Recently uploaded</h2>
+  <div class="recently-wrap">
+    <section class="recently">
+      <div class="col col-1">
+        <a href="#">
+          <figure class="photo-wrap photo-1">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-1.jpg" alt="Rec1">
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="photo-wrap photo-2">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-2.jpg" alt="Rec2">
+          </figure>
+        </a>
+      </div>
+      <div class="col col-2">
+        <a href="#">
+          <figure class="photo-wrap photo-3">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-3.jpg" alt="Rec3">
+          </figure>
+        </a>
+      </div>
+      <div class="col col-3">
+        <a href="#">
+          <figure class="photo-wrap photo-4">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-4.jpg" alt="Rec4">
+          </figure>
+        </a>
+      </div>
+      <div class="col col-4">
+        <a href="#">
+          <figure class="photo-wrap photo-5">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-5.jpg" alt="Rec5">
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="photo-wrap photo-6">
+            <figcaption class="photo-description">
+              <h5>Old man from India</h5>
+              <p>by Frank Tucker</p>
+            </figcaption>
+            <img src="images/recently-6.jpg" alt="Rec6">
+          </figure>
+        </a>
+      </div>
+      <a href="#" class="recently-button btn">Load more</a>
+    </section>
+  </div>
+</div>
+<div class="container">
+  <h2>About Stock photography</h2>
+</div>
+<div class="container bg-about">
+  <section class="about">
+    <div class="about-title">What is Stock Photography?</div>
+    <p>Supply of photographs, which are often licensed for specific uses. It is used to fulfill the needs of creative assignments instead of hiring a photographer, often for a lower cost. Today, stock images can be presented in searchable online databases. They can be purchased and delivered online.</p>
+    <a href="#" class="about-button btn">Know More</a>
+  </section>
+</div>
+<div class="container">
+  <section class="customers-quote">
+    <h2>Hear what our customers are saying</h2>
+    <blockquote class="quote quote-1">
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.</p>
+      <cite>
+        <div class="author">
+          <b>Jennifer R. Rhoades, CEO, Bubblesphere</b>
+        </div>
+        <div class="photo-wrap"></span>
+          <img src="images/customer-photo-1.jpg" alt="Customer photo">
+        </div>
+      </cite>
+    </blockquote>
+    <blockquote class="quote quote-2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.</p>
+      <cite>
+        <div class="author">
+          <b>Matthew J. Sears, Founder of Feedclub</b>
+        </div>
+        <div class="photo-wrap"></span>
+          <img src="images/customer-photo-2.jpg" alt="Customer photo">
+        </div>
+      </cite>
+    </blockquote>
+  </section>
+</div>
+<div class="container">
+  <section class=" sponsors">
+    <h2>Our sponsors</h2>
+    <div class="owl-nav"></div>
+    <div class="owl-carousel owl-theme">
+      <a href="#"><img src="images/sponsor-icon-1.png" alt="Woo"></a>
+      <a href="#"><img src="images/sponsor-icon-2.png" alt="Envato"></a>
+      <a href="#"><img src="images/sponsor-icon-3.png" alt="Wordpress"></a>
+      <a href="#"><img src="images/sponsor-icon-4.png" alt="Dribbble"></a>
+      <a href="#"><img src="images/sponsor-icon-5.png" alt="jQuery"></a>
+      <a href="#"><img src="images/sponsor-icon-2.png" alt="Envato"></a>
+      <a href="#"><img src="images/sponsor-icon-2.png" alt="Envato"></a>
+    </div>
+  </section>
+</div>
+<div class="container">
+  <section class="team">
+    <h2>Meet our team</h2>
+    <div class="member member-1">
+      <div class="member-photo">
+        <img src="images/team-photo-1.jpg" alt="Patrica Wright">
+      </div>
+      <div class="member-name">Patrica Wright</div>
+      <div class="member-position">Lead Developer</div>
+      <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+      <a href="#" class="social social-tw"></a>
+      <a href="#" class="social social-fb"></a>
+      <a href="#" class="social social-dr"></a>
+      <a href="#" class="social social-pn"></a>
+    </div>
+    <div class="member member-2">
+      <div class="member-photo">
+        <img src="images/team-photo-2.jpg" alt="James C. Cotter">
+      </div>
+      <div class="member-name">James C. Cotter</div>
+      <div class="member-position">CEO</div>
+      <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+      <div class="member-socials">
+        <a href="#" class="social social-tw"></a>
+        <a href="#" class="social social-fb"></a>
+        <a href="#" class="social social-dr"></a>
+        <a href="#" class="social social-pn"></a>
+      </div>
+    </div>
+    <div class="member member-3">
+      <div class="member-photo">
+        <img src="images/team-photo-3.jpg" alt="Sarah Cole">
+      </div>
+      <div class="member-name">Sarah Cole</div>
+      <div class="member-position">Web Designer</div>
+      <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+      <a href="#" class="social social-tw"></a>
+      <a href="#" class="social social-fb"></a>
+      <a href="#" class="social social-dr"></a>
+      <a href="#" class="social social-pn"></a>
+    </div>
+  </section>
+</div>
+<div class="container bg-map">
+  <div class="map">
+    <iframe width="650" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=45.7772%2C15.9867&key=AIzaSyBf4bHfMhK8BRf_L71O-Mk3qc_ml4ihcNM" allowfullscreen></iframe>
+  </div>
+</div>
+<div class="container">
+  <section class="contact">
+    <h2>Get in touch with us</h2>
+    <form action="#" method="POST">
+      <input class="fname" id="fname" name="fname" type="text">
+      <input class="lname" id="lname" name="lname" type="text">
+      <input class="email" id="email" name="email" type="text">
+      <input class="phone" id="phone" name="phone" type="text">
+      <textarea id="message" name="message" cols="30" rows="10" placeholder="Message"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+    <div class="contact-address">
+      <h4>Our address</h4>
+      <table>
+        <tr>
+          <td class="title">Adress:</td>
+          <td class="text">3497 Gateway Road Portland,<br>OR 97217</td>
+        </tr>
+        <tr>
+          <td class="title">Phone:</td>
+          <td class="text">(229) 503-289-9830</td>
+        </tr>
+        <tr>
+          <td class="title">Web:</td>
+          <td class="text">www.mobilecom.com</td>
+        </tr>
+      </table>
+    </div>
+    <div class="contact-about">
+      <h4>About us</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida dapibus sapien.</p>
+    </div>
+  </section>
+</div>
+<div class="container bg-footer">
+  <footer class="main-footer">
+    <img class="footer-socials" src="images/footer-socials-dummy.png" alt="Socials">
+    <p class="copy">&copy; 2015 Innosphere - All rights reserved - made by Vid Kraljić Radulović</p>
+  </footer>
+</div>
+<script src="js/app.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      margin:10,
+      nav:true,
+      navContainer:'.owl-nav',
+      navText: '',
+      dots:true,
+      responsive:{
+        0:{
+          items:1
+        },
+        300: {
+          items:2
+        },
+        600:{
+          items:3
+        },
+        850: {
+          items:4
+        },
+        1130:{
+          items:5
+        }
+      }
+    });
+  });
+  $(document).click(function (e) {
+    if ($(e.target).hasClass('map')) {
+        $('.map iframe').css("pointer-events", "auto");
+      } else {
+        $('.map iframe').css("pointer-events", "none");
+      }
+  });
+  $('.search-button').click(function () {
+      $('.search form').toggleClass("visible");
+    });
+  var $inputs = $('#s-color-input, #s-color-picker');
+  $inputs.change(function(){
+    $inputs.val($(this).val());
+  });
+</script>
+</body>
+</html>
