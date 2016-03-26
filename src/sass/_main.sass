@@ -27,11 +27,11 @@ body
     text-decoration: none
     text-transform: uppercase
     vertical-align: top
+    text-align: center
     color: #fff
     background-color: #f17398
     border: none
     border-bottom: 0.25em solid #db577e // 4px / 12px
-    // outline: none
     user-select: none
     cursor: pointer
     &::-moz-focus-inner
@@ -70,8 +70,7 @@ h2
 .bg-footer
     background-color: #232020
 
-.bg-map
-    border-top: 6px solid #f0f0f0
+
 // Header
 //=====================================
 .main-header
@@ -150,33 +149,30 @@ h2
 
 .nav-socials
     position: absolute
-    bottom: 1.125em     // 20px / 16px
+    bottom: 0.875em     // 14px / 16px
     right: 1.875%
     a
         display: inline-block
         outline: none
-    i
-        margin-left: 10px
-        vertical-align: bottom
-        +sprite-image($icon-fb)
-        text-indent: -9999px
-        display: inline-block
+        &::after
+            display: inline-block
+            width: 1em
+            font-family: "fontello"
+            font-style: normal
+            font-weight: normal
+            color: #fff
+            speak: none
+            text-align: center
+            margin: 0 3px 0 3px
+            vertical-align: middle
+    .nav-icon-fb::after
+        content: '\e807'
+    .nav-icon-in::after
+        content: '\e804'
+    .nav-icon-bh::after
+        content: '\e805'
+        margin-top: 0.25em
 
-.nav-icon-fb
-    +sprite-width($icon-fb)
-    +sprite-height($icon-fb)
-    +sprite-position($icon-fb)
-
-.nav-icon-in
-    +sprite-width($icon-in)
-    +sprite-height($icon-in)
-    +sprite-position($icon-in)
-
-.nav-icon-bh
-    +sprite-width($icon-bh)
-    +sprite-height($icon-bh)
-    +sprite-position($icon-bh)
-    
 //TODO media: remove padding at 1250
 
 
@@ -215,7 +211,9 @@ h2
     display: block
 .search
     position: relative
-    padding: 1.5em 0 6.25em 0 // 24px / 16px, 100px / 16px
+    padding: 0 0 6.25em 0 // 24px / 16px, 100px / 16px
+    form
+        padding-top: 1.5em
     .search-button
         position: absolute
         top: 0
@@ -264,7 +262,6 @@ h2
         &.group-color
             width: 20.5794206%  // 206px / 1001px
 
-
     select
         display: block
         width: 100%
@@ -303,22 +300,35 @@ h2
             // TODO @media
             // text-indent: -9999px
             // padding: 0
-        input[type=text]
-            width: 60% // 60px / 207px
-            // margin-left: 2%
+        .text-input
+            width: 60%
             outline: none
+            background: none
             border: none
             text-transform: uppercase
-        input[type=color]
-            position: absolute
-            right: 0
-            height: 93%
-            color: #2f343a
+        .color-input
+            display: block
+            background: none
             border: none
-            border-left: 1px solid #b3b3b3
-            background-color: #f1f2f2
+            width: 100%
+            height: 100%
+            box-sizing: border-box
             &:hover
                 background-color: #d6d6d6
+        &.focus
+            border-color: #000
+            .color-input-wrap
+                border-color: #000
+    .color-input-wrap
+        position: absolute
+        right: 0
+        top: 0
+        width: 45px
+        height: 100%
+        border: none
+        border-left: 1px solid #b3b3b3
+        background-color: #f1f2f2
+        overflow: hidden
 
     .select-wrap
         background: url('../images/bg-select.png') 100% 50% no-repeat
@@ -329,7 +339,7 @@ h2
         width: 18.6458333% // 179px / 960px
 
     label.radio-label
-        display: inline-block
+        float: left
         box-sizing: border-box
         width: 49.1620112%
         padding: 0.384615385em 0    // 5px / 13px
@@ -342,18 +352,20 @@ h2
         border-right: none
         &:last-child
             border: 1px solid #b3b3b3
-    input[type=radio]
+    .radio-input
         position: absolute
         width: 0
         height: 0
-
+        border: none
+        background: none
+        appearance: none
+        opacity: 0
         &:checked + label
             background-color: #2f343a
             color: #fff
 
     .group-submit
-        width: 24.3756244%   // 244px / 1001px
-        
+        width: 24.3756244%   // 244px / 1001px        
 
     .submit
         width: 100%     // 222px
@@ -376,7 +388,7 @@ h2
         font-size: 1.5625em     // 25px / 16px
         margin-bottom: 1.44em   // 36px / 25px
     p
-        padding: 0 3.125%       // 30px  / 960px
+        padding: 0 3.125%       // 30px / 960px
         font-size: 1.125em      // 18px / 16px
 
 
@@ -623,8 +635,6 @@ section.customers-quote
             margin-top: -20%
         &-3
             margin-right: 0
-        // &-socials
-            // transform: scale(.5)
     .social
         position: relative
         display: inline-block
@@ -632,63 +642,84 @@ section.customers-quote
         height: 0
         padding-bottom: 15.2866242%
         margin-right: 2.5477707%
+        text-align: center
         border-radius: 4px
         box-shadow: inset 0 1px 1px rgba(#fff, .45), 0 1px 1px rgba(#000, .3)
-        &::after
-            content: ''
+        i
             position: absolute
             top: 50%
             left: 50%
-            margin: 0 auto
-            margin-top: -12px
-            margin-left: -12px
-            display: block
-            +sprite($icon-team-fb)
+            margin-left: -15px
+            margin-top: -17px
+            width: 30px
+            height: 34px
+            font-family: "fontello"
+            font-style: normal
+            font-weight: normal
+            font-size: 26px
+            color: #fff
+            speak: none
+            text-shadow: 0 -1px 1px rgba(#000, .4)
         &::before
             content: ''
-            display: block
+            position: absolute
+            left: 0
+            top: 0
             width: 100%
             padding-bottom: 100%
             background-color: rgba(#fff, .5)
             background: radial-gradient(ellipse at top, rgba(#fff,1) 0%,rgba(#fff,.3) 100%)
             opacity: 0
             transition: opacity .2s ease-in-out
+            // background-color: #f00
         &:hover::before
             opacity: .4
+        &:active::before
+            opacity: .4
+            background: linear-gradient(to top, rgba(#fff,.8) 0%,rgba(#fff,.3) 100%)
 
         &-tw
             background: #5672af
             background: linear-gradient(to bottom, #abe4f8 0%,#6ecef3 100%)
             border: 1px solid #71c3e2
-            &::after
-                left: 47%
-                +sprite($icon-team-tw)
         &-fb
             background: #5672af
             background: linear-gradient(to bottom, #507dc5 0%,#3b5ca2 79%,#5377ba 80%,#4a69b2 100%)
             border: 1px solid #39599f
-            &::after
-                left: 75%
-                +sprite($icon-team-fb)
+            i
+                left: 62%
         &-dr
             background: #5672af
             background: linear-gradient(to bottom, #e8abc9 0%,#d56e9c 100%)
             border: 1px solid #d97aa5
-            &::after
-                +sprite($icon-team-dr)
+            i
+                top: 45%
         &-pn
             background: #5672af
             background: linear-gradient(to bottom, #f80d0d 0%,#f30808 100%)
             border: 1px solid #c30909
-            &::after
-                left: 57%
-                +sprite($icon-team-pn)
     img
         width: 100%
 
 
-// Team
+// Map
 //=====================================
-.map iframe
-    width: 100%
-    pointer-events: none
+.map
+    position: relative
+    border-top: 6px solid #f0f0f0
+    iframe
+        width: 100%
+        height: 450px
+        height: 80vh
+        max-height: 450px
+    &-overlay
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        cursor: pointer
+
+
+// Contact
+//=====================================
