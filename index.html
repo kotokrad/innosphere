@@ -35,9 +35,9 @@
       <li><a href="#">Contact</a></li>
     </ul>
     <div class="nav-socials">
-      <a href="#"><i class="nav-icon-fb">Facebook</i></a>
-      <a href="#"><i class="nav-icon-in">LinkedIn</i></a>
-      <a href="#"><i class="nav-icon-bh">Behance</i></a>
+      <a class="nav-icon-fb" href="#"></a>
+      <a class="nav-icon-in" href="#"></a>
+      <a class="nav-icon-bh" href="#"></a>
     </div>
   </nav>
   <section class="banner">
@@ -50,8 +50,8 @@
 </div>
 <div class="container">
   <section class="search">
-    <button class="search-button"><i></i>SEARCH ALL GALLERIES</button>
-    <form class="visible" action="/search" method="GET">
+    <button class="search-button" id="search-button"><i></i>SEARCH ALL GALLERIES</button>
+    <form class="visible" id="search-form" action="/search" method="GET">
       <div class="form-group">
         <label for="s-cat">Categories</label>
         <div class="select-wrap">
@@ -83,11 +83,12 @@
       </div>
       <div class="form-group group-color">
         <label>Color</label>
-        <div class="color-picker">
-          <label for="s-color-input">HEX</label>
-          <input type="text" name="color" id="s-color-input" placeholder="#F6546A" maxlength="7">
-          <input type="color" name="color" id="s-color-picker" value="#F6546A">
-          <!-- <button id="s-color-apply">APPLY</button> -->
+        <div class="color-picker" id="color-picker">
+          <label for="s-text-input">HEX</label>
+          <input type="text" name="color" id="s-text-input" class="text-input" placeholder="#F6546A" maxlength="7">
+          <div class="color-input-wrap">
+            <input type="color" id="s-color-input" class="color-input" value="#F6546A">
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -108,10 +109,10 @@
       </div>
       <div class="form-group group-radio">
         <label>Adult Content</label>
-        <input type="radio" name="s-adult" id="s-adult-yes" value="yes" checked><!-- 
-         --><label class="radio-label" for="s-adult-yes">YES</label><!-- 
-         --><input type="radio" name="s-adult" id="s-adult-no" value="no"><!-- 
-         --><label class="radio-label" for="s-adult-no">NO</label>
+        <input type="radio" name="s-adult" id="s-adult-yes" class="radio-input" value="yes" checked>
+        <label class="radio-label" for="s-adult-yes">YES</label>
+        <input type="radio" name="s-adult" id="s-adult-no" class="radio-input" value="no">
+        <label class="radio-label" for="s-adult-no">NO</label>
         </div>
       <div class="form-group group-submit">
         <button type="submit" class="submit btn">START YOUR SEARCH</button>
@@ -259,10 +260,10 @@
       <div class="member-name">Patrica Wright</div>
       <div class="member-position">Lead Developer</div>
       <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
-      <a href="#" class="social social-tw"></a>
-      <a href="#" class="social social-fb"></a>
-      <a href="#" class="social social-dr"></a>
-      <a href="#" class="social social-pn"></a>
+      <a href="#" class="social social-tw"><i>&#xe802;</i></a>
+      <a href="#" class="social social-fb"><i>&#xe807;</i></a>
+      <a href="#" class="social social-dr"><i>&#xe809;</i></a>
+      <a href="#" class="social social-pn"><i>&#xe801;</i></a>
     </div>
     <div class="member member-2">
       <div class="member-photo">
@@ -272,10 +273,10 @@
       <div class="member-position">CEO</div>
       <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
       <div class="member-socials">
-        <a href="#" class="social social-tw"></a>
-        <a href="#" class="social social-fb"></a>
-        <a href="#" class="social social-dr"></a>
-        <a href="#" class="social social-pn"></a>
+        <a href="#" class="social social-tw"><i>&#xe802;</i></a>
+        <a href="#" class="social social-fb"><i>&#xe807;</i></a>
+        <a href="#" class="social social-dr"><i>&#xe809;</i></a>
+        <a href="#" class="social social-pn"><i>&#xe801;</i></a>
       </div>
     </div>
     <div class="member member-3">
@@ -285,16 +286,17 @@
       <div class="member-name">Sarah Cole</div>
       <div class="member-position">Web Designer</div>
       <div class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
-      <a href="#" class="social social-tw"></a>
-      <a href="#" class="social social-fb"></a>
-      <a href="#" class="social social-dr"></a>
-      <a href="#" class="social social-pn"></a>
+      <a href="#" class="social social-tw"><i>&#xe802;</i></a>
+      <a href="#" class="social social-fb"><i>&#xe807;</i></a>
+      <a href="#" class="social social-dr"><i>&#xe809;</i></a>
+      <a href="#" class="social social-pn"><i>&#xe801;</i></a>
     </div>
   </section>
 </div>
-<div class="container bg-map">
-  <div class="map">
+<div class="container">
+  <div class="map" id="map">
     <iframe width="650" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=45.7772%2C15.9867&key=AIzaSyBf4bHfMhK8BRf_L71O-Mk3qc_ml4ihcNM" allowfullscreen></iframe>
+    <div class="map-overlay" id="map-overlay"></div>
   </div>
 </div>
 <div class="container">
@@ -339,7 +341,43 @@
 </div>
 <script src="js/app.min.js"></script>
 <script>
-  $(document).ready(function(){
+  $('#search-button').click(function(){
+    $('#search-form').toggleClass('visible');
+  });
+
+  var $inputs = $('#s-text-input, #s-color-input');
+  $inputs
+  .change(function() {
+      $inputs.val($(this).val());
+    })
+  .focusin(function() {
+      $('#color-picker').addClass('focus');
+    })
+  .focusout(function() {
+      $('#color-picker').removeClass('focus');
+    });
+
+  function enableMap(state) {
+    $('#map-overlay')
+    .css('pointer-events', state ? 'none' : 'auto');
+    $('#map').css('border-color', state ? '#f17398' : '#f0f0f0')
+    if (state) {
+      $('html, body').animate({
+        scrollTop: $("#map").offset().top
+      }, 400);
+      $(document).on('mousewheel touchmove', function(e){
+        enableMap(false);
+      });
+    } else {
+      $(document).off('mousewheel touchmove')
+    }
+  }
+  $(document).click(function(e) {
+    var state = $(e.target).is('#map-overlay')
+    enableMap(state);
+  });
+
+  $(document).ready(function() {
     $('.owl-carousel').owlCarousel({
       margin:10,
       nav:true,
@@ -364,20 +402,6 @@
         }
       }
     });
-  });
-  $(document).click(function (e) {
-    if ($(e.target).hasClass('map')) {
-        $('.map iframe').css("pointer-events", "auto");
-      } else {
-        $('.map iframe').css("pointer-events", "none");
-      }
-  });
-  $('.search-button').click(function () {
-      $('.search form').toggleClass("visible");
-    });
-  var $inputs = $('#s-color-input, #s-color-picker');
-  $inputs.change(function(){
-    $inputs.val($(this).val());
   });
 </script>
 </body>

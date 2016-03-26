@@ -274,6 +274,13 @@ table {
 
   @include sprites($spritesheet-sprites)
   */
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?83786237");
+  src: url("../fonts/fontello.eot?83786237#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?83786237") format("woff"), url("../fonts/fontello.ttf?83786237") format("truetype"), url("../fonts/fontello.svg?83786237#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
   font: normal 100%/1.5 'Open Sans', sans-serif; }
 
@@ -299,6 +306,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: top;
+  text-align: center;
   color: #fff;
   background-color: #f17398;
   border: none;
@@ -340,9 +348,6 @@ h2 {
 
 .bg-footer {
   background-color: #232020; }
-
-.bg-map {
-  border-top: 6px solid #f0f0f0; }
 
 .main-header {
   padding-top: 3.75em;
@@ -414,32 +419,29 @@ h2 {
 
 .nav-socials {
   position: absolute;
-  bottom: 1.125em;
+  bottom: 0.875em;
   right: 1.875%; }
   .nav-socials a {
     display: inline-block;
     outline: none; }
-  .nav-socials i {
-    margin-left: 10px;
-    vertical-align: bottom;
-    background-image: url(../images/sprite.png);
-    text-indent: -9999px;
-    display: inline-block; }
-
-.nav-icon-fb {
-  width: 8px;
-  height: 17px;
-  background-position: -71px -26px; }
-
-.nav-icon-in {
-  width: 17px;
-  height: 17px;
-  background-position: -52px -25px; }
-
-.nav-icon-bh {
-  width: 20px;
-  height: 12px;
-  background-position: -19px -47px; }
+    .nav-socials a::after {
+      display: inline-block;
+      width: 1em;
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      color: #fff;
+      speak: none;
+      text-align: center;
+      margin: 0 3px 0 3px;
+      vertical-align: middle; }
+  .nav-socials .nav-icon-fb::after {
+    content: '\e807'; }
+  .nav-socials .nav-icon-in::after {
+    content: '\e804'; }
+  .nav-socials .nav-icon-bh::after {
+    content: '\e805';
+    margin-top: 0.25em; }
 
 .banner {
   width: 71.5%;
@@ -473,7 +475,9 @@ h2 {
 
 .search {
   position: relative;
-  padding: 1.5em 0 6.25em 0; }
+  padding: 0 0 6.25em 0; }
+  .search form {
+    padding-top: 1.5em; }
   .search .search-button {
     position: absolute;
     top: 0;
@@ -559,21 +563,36 @@ h2 {
       color: #b3b3b3;
       padding-left: 6%;
       padding-right: 7%; }
-    .search .color-picker input[type=text] {
+    .search .color-picker .text-input {
       width: 60%;
       outline: none;
+      background: none;
       border: none;
       text-transform: uppercase; }
-    .search .color-picker input[type=color] {
-      position: absolute;
-      right: 0;
-      height: 93%;
-      color: #2f343a;
+    .search .color-picker .color-input {
+      display: block;
+      background: none;
       border: none;
-      border-left: 1px solid #b3b3b3;
-      background-color: #f1f2f2; }
-      .search .color-picker input[type=color]:hover {
+      width: 100%;
+      height: 100%;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .search .color-picker .color-input:hover {
         background-color: #d6d6d6; }
+    .search .color-picker.focus {
+      border-color: #000; }
+      .search .color-picker.focus .color-input-wrap {
+        border-color: #000; }
+  .search .color-input-wrap {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 100%;
+    border: none;
+    border-left: 1px solid #b3b3b3;
+    background-color: #f1f2f2;
+    overflow: hidden; }
   .search .select-wrap {
     background: url("../images/bg-select.png") 100% 50% no-repeat; }
     .search .select-wrap:hover {
@@ -581,7 +600,7 @@ h2 {
   .search .group-radio {
     width: 18.6458333%; }
   .search label.radio-label {
-    display: inline-block;
+    float: left;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 49.1620112%;
@@ -595,11 +614,17 @@ h2 {
     border-right: none; }
     .search label.radio-label:last-child {
       border: 1px solid #b3b3b3; }
-  .search input[type=radio] {
+  .search .radio-input {
     position: absolute;
     width: 0;
-    height: 0; }
-    .search input[type=radio]:checked + label {
+    height: 0;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 0; }
+    .search .radio-input:checked + label {
       background-color: #2f343a;
       color: #fff; }
   .search .group-submit {
@@ -857,24 +882,29 @@ section.customers-quote {
     height: 0;
     padding-bottom: 15.2866242%;
     margin-right: 2.5477707%;
+    text-align: center;
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.3); }
-    .team .social::after {
-      content: '';
+    .team .social i {
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: 0 auto;
-      margin-top: -12px;
-      margin-left: -12px;
-      display: block;
-      background-image: url(../images/sprite.png);
-      background-position: -71px 0px;
-      width: 14px;
-      height: 26px; }
+      margin-left: -15px;
+      margin-top: -17px;
+      width: 30px;
+      height: 34px;
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      color: #fff;
+      speak: none;
+      text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4); }
     .team .social::before {
       content: '';
-      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
       padding-bottom: 100%;
       background-color: rgba(255, 255, 255, 0.5);
@@ -885,52 +915,49 @@ section.customers-quote {
       transition: opacity .2s ease-in-out; }
     .team .social:hover::before {
       opacity: .4; }
+    .team .social:active::before {
+      opacity: .4;
+      background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 100%);
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 100%); }
     .team .social-tw {
       background: #5672af;
       background: -moz-linear-gradient(top, #abe4f8 0%, #6ecef3 100%);
       background: linear-gradient(to bottom, #abe4f8 0%, #6ecef3 100%);
       border: 1px solid #71c3e2; }
-      .team .social-tw::after {
-        left: 47%;
-        background-image: url(../images/sprite.png);
-        background-position: 0px 0px;
-        width: 28px;
-        height: 23px; }
     .team .social-fb {
       background: #5672af;
       background: -moz-linear-gradient(top, #507dc5 0%, #3b5ca2 79%, #5377ba 80%, #4a69b2 100%);
       background: linear-gradient(to bottom, #507dc5 0%, #3b5ca2 79%, #5377ba 80%, #4a69b2 100%);
       border: 1px solid #39599f; }
-      .team .social-fb::after {
-        left: 75%;
-        background-image: url(../images/sprite.png);
-        background-position: -71px 0px;
-        width: 14px;
-        height: 26px; }
+      .team .social-fb i {
+        left: 62%; }
     .team .social-dr {
       background: #5672af;
       background: -moz-linear-gradient(top, #e8abc9 0%, #d56e9c 100%);
       background: linear-gradient(to bottom, #e8abc9 0%, #d56e9c 100%);
       border: 1px solid #d97aa5; }
-      .team .social-dr::after {
-        background-image: url(../images/sprite.png);
-        background-position: -28px 0px;
-        width: 24px;
-        height: 24px; }
+      .team .social-dr i {
+        top: 45%; }
     .team .social-pn {
       background: #5672af;
       background: -moz-linear-gradient(top, #f80d0d 0%, #f30808 100%);
       background: linear-gradient(to bottom, #f80d0d 0%, #f30808 100%);
       border: 1px solid #c30909; }
-      .team .social-pn::after {
-        left: 57%;
-        background-image: url(../images/sprite.png);
-        background-position: 0px -47px;
-        width: 19px;
-        height: 24px; }
   .team img {
     width: 100%; }
 
-.map iframe {
-  width: 100%;
-  pointer-events: none; }
+.map {
+  position: relative;
+  border-top: 6px solid #f0f0f0; }
+  .map iframe {
+    width: 100%;
+    height: 450px;
+    height: 80vh;
+    max-height: 450px; }
+  .map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; }
