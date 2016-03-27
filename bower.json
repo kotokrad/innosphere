@@ -19,6 +19,7 @@
     "html5shiv": "~3.7.3",
     "reset-css": "^2.0.2011012603",
     "jquery": "^2.2.2",
-    "owl.carousel": "owl-carousel2#^2.0.0-beta.3"
+    "owl.carousel": "owl-carousel2#^2.0.0-beta.3",
+    "jquery-validation": "^1.15.0"
   }
 }
