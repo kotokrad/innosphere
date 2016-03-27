@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/screen.min.css">
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
   <title>Innosphere</title>
 </head>
 <body>
 <div class="container bg-banner">
-  <header class="main-header">
+  <header class="main-header" id="main-header">
     <dl class="header-contact contact-visit">
       <dt>Visit our office</dt>
       <dd>2945 Rinehart Road, Sunrise</dd>
@@ -23,11 +26,11 @@
       <dd>info@innosphere.com</dd>
     </dl>
   </header>
-  <nav class="main-nav">
+  <nav class="main-nav visible" id="nav-menu">
     <ul>
       <li><a href="#">Homepage</a></li>
       <li><a href="#">Search</a></li>
-      <li><a class="current" href="#">Recent  Images</a></li>
+      <li><a class="current" href="#">Recent Images</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Testimonials</a></li>
       <li><a href="#">Sponsors</a></li>
@@ -39,6 +42,8 @@
       <a class="nav-icon-in" href="#"></a>
       <a class="nav-icon-bh" href="#"></a>
     </div>
+    <div class="nav-button button-menu" id="nav-button-menu">&#xe800;</div>
+    <div class="nav-button button-contact" id="nav-button-contact">&#xe806;</div>
   </nav>
   <section class="banner">
     <div class="banner-text">
@@ -109,9 +114,9 @@
       </div>
       <div class="form-group group-radio">
         <label>Adult Content</label>
-        <input type="radio" name="s-adult" id="s-adult-yes" class="radio-input" value="yes" checked>
+        <input type="radio" name="adult" id="s-adult-yes" class="radio-input" value="yes" checked>
         <label class="radio-label" for="s-adult-yes">YES</label>
-        <input type="radio" name="s-adult" id="s-adult-no" class="radio-input" value="no">
+        <input type="radio" name="adult" id="s-adult-no" class="radio-input" value="no">
         <label class="radio-label" for="s-adult-no">NO</label>
         </div>
       <div class="form-group group-submit">
@@ -302,45 +307,56 @@
 <div class="container">
   <section class="contact">
     <h2>Get in touch with us</h2>
-    <form action="#" method="POST">
-      <input class="fname" id="fname" name="fname" type="text">
-      <input class="lname" id="lname" name="lname" type="text">
-      <input class="email" id="email" name="email" type="text">
-      <input class="phone" id="phone" name="phone" type="text">
+    <form class="contact-form" action="#" method="POST">
+      <input class="fname" id="fname" name="fname" type="text" placeholder="First name">
+      <input class="lname" id="lname" name="lname" type="text" placeholder="Last name">
+      <input class="email" id="email" name="email" type="text" placeholder="Email">
+      <input class="phone" id="phone" name="phone" type="text" placeholder="Phone number">
       <textarea id="message" name="message" cols="30" rows="10" placeholder="Message"></textarea>
       <button class="btn" type="submit">Send Message</button>
     </form>
-    <div class="contact-address">
-      <h4>Our address</h4>
-      <table>
-        <tr>
-          <td class="title">Adress:</td>
-          <td class="text">3497 Gateway Road Portland,<br>OR 97217</td>
-        </tr>
-        <tr>
-          <td class="title">Phone:</td>
-          <td class="text">(229) 503-289-9830</td>
-        </tr>
-        <tr>
-          <td class="title">Web:</td>
-          <td class="text">www.mobilecom.com</td>
-        </tr>
-      </table>
-    </div>
-    <div class="contact-about">
-      <h4>About us</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida dapibus sapien.</p>
+    <div class="contact-wrap-misc">
+      <div class="contact-address">
+        <h4 class="contact-address-title">Our address</h4>
+        <table>
+          <tr>
+            <td class="title">Adress:</td>
+            <td class="text">3497 Gateway Road Portland,<br>OR 97217</td>
+          </tr>
+          <tr>
+            <td class="title">Phone:</td>
+            <td class="text">(229) 503-289-9830</td>
+          </tr>
+          <tr>
+            <td class="title">Web:</td>
+            <td class="text">www.mobilecom.com</td>
+          </tr>
+        </table>
+      </div>
+      <div class="contact-about">
+        <h4 class="contact-about-title">About us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida dapibus sapien.</p>
+      </div>
     </div>
   </section>
 </div>
 <div class="container bg-footer">
   <footer class="main-footer">
-    <img class="footer-socials" src="images/footer-socials-dummy.png" alt="Socials">
+    <a href="#" class="social social-fb"></a>
+    <a href="#" class="social social-tw"></a>
+    <a href="#" class="social social-in"></a>
+    <a href="#" class="social social-vi"></a>
     <p class="copy">&copy; 2015 Innosphere - All rights reserved - made by Vid Kraljić Radulović</p>
   </footer>
 </div>
 <script src="js/app.min.js"></script>
 <script>
+  $('#nav-button-menu').click(function(){
+    $('#nav-menu').toggleClass('visible');
+  });
+  $('#nav-button-contact').click(function(){
+    $('#main-header').toggleClass('visible');
+  });
   $('#search-button').click(function(){
     $('#search-form').toggleClass('visible');
   });
@@ -365,11 +381,10 @@
       $('html, body').animate({
         scrollTop: $("#map").offset().top
       }, 400);
-      $(document).on('mousewheel touchmove', function(e){
+      $(document).on('mousewheel DOMMouseScroll MozMousePixelScroll touchmove', function(e){
         enableMap(false);
+        $(document).off('mousewheel DOMMouseScroll MozMousePixelScroll touchmove')
       });
-    } else {
-      $(document).off('mousewheel touchmove')
     }
   }
   $(document).click(function(e) {
@@ -404,5 +419,13 @@
     });
   });
 </script>
+<noscript>
+  <style>
+    /* .main-nav li {
+      visibility: visible;
+    } */
+    /* TODO */
+  </style>
+</noscript>
 </body>
 </html>
