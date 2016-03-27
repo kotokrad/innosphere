@@ -466,7 +466,8 @@ h2 {
     right: 1.875%; }
     .main-nav .nav-socials a {
       display: inline-block;
-      outline: none; }
+      outline: none;
+      text-decoration: none; }
       .main-nav .nav-socials a::after {
         display: inline-block;
         width: 1em;
@@ -1369,7 +1370,8 @@ section.customers-quote {
     width: 40px;
     height: 40px;
     margin: 0 11px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    text-decoration: none; }
     .main-footer .social::before {
       display: inline-block;
       width: 1em;
