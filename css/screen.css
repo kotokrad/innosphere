@@ -466,7 +466,6 @@ h2 {
     right: 1.875%; }
     .main-nav .nav-socials a {
       display: inline-block;
-      outline: none;
       text-decoration: none; }
       .main-nav .nav-socials a::after {
         display: inline-block;
@@ -534,11 +533,11 @@ h2 {
         width: 100%;
         height: auto;
         text-align: center;
-        -moz-transition: margin .5s;
-        transition: margin .5s; }
+        -moz-transition: margin .3s;
+        transition: margin .3s; }
       nav.main-nav.show li {
-        -moz-transition: opacity .7s;
-        transition: opacity .7s;
+        -moz-transition: opacity .4s;
+        transition: opacity .4s;
         display: block;
         float: left;
         width: 25%;
@@ -1049,10 +1048,11 @@ section.customers-quote {
   text-align: center;
   position: relative; }
   .sponsors a {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle; }
   .sponsors .owl-prev, .sponsors .owl-next {
     position: absolute;
-    bottom: 20px;
+    bottom: 11px;
     width: 30px;
     height: 30px;
     text-align: center;
