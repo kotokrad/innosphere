@@ -458,7 +458,7 @@ h2 {
       text-decoration: none;
       text-transform: uppercase;
       border-bottom: 4px solid transparent; }
-      .main-nav li a:hover {
+      .main-nav li a:hover, .main-nav li a.current {
         border-bottom: 4px solid #f17398; }
   .main-nav .nav-socials {
     position: absolute;
@@ -617,6 +617,8 @@ h2 {
   .search form {
     padding-top: 1.5em; }
   .search .search-button {
+    display: inline-block;
+    vertical-align: middle;
     position: absolute;
     top: 0;
     left: 3.135294118em;
@@ -626,6 +628,7 @@ h2 {
     color: #fff;
     font-size: 1.0625em;
     font-weight: 700;
+    text-decoration: none;
     background: #232020;
     border: none;
     cursor: pointer; }
@@ -855,6 +858,8 @@ section.recently {
       margin-bottom: 5.2910053%; }
   section.recently a {
     display: block; }
+    section.recently a:hover figcaption, section.recently a:focus figcaption {
+      display: block; }
   section.recently .photo-wrap {
     position: relative; }
     section.recently .photo-wrap img {
@@ -877,8 +882,6 @@ section.recently {
       section.recently .photo-wrap figcaption p {
         font-size: 0.8125em;
         font-style: italic; }
-    section.recently .photo-wrap:hover figcaption {
-      display: block; }
   section.recently .photo-preview-wrap::after {
     content: '';
     display: table;

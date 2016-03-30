@@ -26,16 +26,16 @@
       <dd>info@innosphere.com</dd>
     </dl>
   </header>
-  <nav class="main-nav" id="nav-menu">
+  <nav id="main-nav" class="main-nav">
     <ul>
-      <li><a href="./">Homepage</a></li>
-      <li><a href="#search">Search</a></li>
-      <li><a href="#recently">Recent Images</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#sponsors">Sponsors</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a id="nav-link-home" href="./">Homepage</a></li>
+      <li><a id="nav-link-search" href="#a-search">Search</a></li>
+      <li><a class="current" href="#a-recently">Recent Images</a></li>
+      <li><a href="#a-about">About</a></li>
+      <li><a href="#a-testimonials">Testimonials</a></li>
+      <li><a href="#a-sponsors">Sponsors</a></li>
+      <li><a href="#a-team">Team</a></li>
+      <li><a href="#a-contact">Contact</a></li>
     </ul>
     <div class="nav-socials">
       <a class="nav-icon-fb" href="#"></a>
@@ -54,7 +54,7 @@
   </section>
 </div>
 <div class="container">
-  <section class="search" id="search">
+  <section id="a-search" class="search">
     <button class="search-button" id="search-button"><i></i>SEARCH ALL GALLERIES</button>
     <form class="show" id="search-form" action="/search" method="GET">
       <div class="form-group">
@@ -132,8 +132,8 @@
   </section>
 </div>
 <div class="container">
-  <h2>Recently uploaded</h2>
-  <section class="recently" id="recently">
+  <h2 id="a-recently">Recently uploaded</h2>
+  <section class="recently">
     <div class="photo-preview-wrap">
       <div class="col col-1">
         <a href="#">
@@ -162,7 +162,7 @@
               <h5>Old man from India</h5>
               <p>by Frank Tucker</p>
             </figcaption>
-            <img src="images/recently-3.jpg" alt="Rec3" max-width="600" max-height="600" >
+            <img src="images/recently-3.jpg" alt="Rec3" max-width="600" max-height="600">
           </figure>
         </a>
       </div>
@@ -202,18 +202,18 @@
   </section>
 </div>
 <div class="container">
-  <h2>About Stock photography</h2>
+  <h2 id="a-about">About Stock photography</h2>
 </div>
 <div class="container bg-about">
-  <section class="about" id="about">
+  <section class="about">
     <div class="about-title">What is Stock Photography?</div>
     <p>Supply of photographs, which are often licensed for specific uses. It is used to fulfill the needs of creative assignments instead of hiring a photographer, often for a lower cost. Today, stock images can be presented in searchable online databases. They can be purchased and delivered online.</p>
     <a href="#" class="about-button btn">Know More</a>
   </section>
 </div>
 <div class="container">
-  <section class="customers-quote" id="testimonials">
-    <h2>Hear what our customers are saying</h2>
+  <section class="customers-quote">
+    <h2 id="a-testimonials">Hear what our customers are saying</h2>
     <blockquote class="quote quote-1">
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis.
@@ -241,8 +241,8 @@
   </section>
 </div>
 <div class="container">
-  <section class="sponsors" id="sponsors">
-    <h2>Our sponsors</h2>
+  <section class="sponsors">
+    <h2 id="a-sponsors">Our sponsors</h2>
     <div class="owl-nav"></div>
     <div class="owl-carousel owl-theme">
       <a href="#"><img src="images/sponsor-icon-1.png" alt="Woo" max-width="150" max-height="50"></a>
@@ -305,7 +305,7 @@
   </div>
 </div>
 <div class="container">
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2>Get in touch with us</h2>
     <form class="contact-form" id="contact-form" action="/sendmessage/" method="POST">
       <input class="fname" id="fname" name="fname" type="text" placeholder="First name" required>

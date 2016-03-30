@@ -14524,8 +14524,21 @@ if ( $.ajaxPrefilter ) {
 })(window.Zepto || window.jQuery, window, document);
 
 $('#nav-button-menu').click(function(){
-  $('#nav-menu').toggleClass('show');
+  $('#main-nav').toggleClass('show');
 });
+
+$('#search-form').removeClass('show');
+
+$('#main-nav ul a:not(#nav-link-home)').click(function(e){
+  e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 400);
+    if ($(this).is('#nav-link-search')) {
+      $('#search-form').addClass('show');
+    }
+});
+
 $('#search-button').click(function(){
   $('#search-form').toggleClass('show');
 });
@@ -14541,7 +14554,7 @@ $('#top-button').click(function(e){
   e.preventDefault();
   $('html, body').animate({
       scrollTop: 0
-    }, 'slow');
+    }, 400);
 });
 
 var $inputs = $('#s-text-input, #s-color-input');
