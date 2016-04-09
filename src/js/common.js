@@ -9,7 +9,8 @@
     e.preventDefault();
       $('html, body').animate({
           scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 400);
+      }, 500);
+      $('#main-nav').removeClass('show');
       if ($(this).is('#nav-link-search')) {
         $('#search-form').addClass('show');
       }
@@ -30,7 +31,7 @@
     e.preventDefault();
     $('html, body').animate({
         scrollTop: 0
-      }, 400);
+      }, 600);
   });
 
   var $inputs = $('#s-text-input, #s-color-input');
